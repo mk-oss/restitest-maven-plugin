@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<tests>
+	<test id="test#1" resource="getContact" scenario="empty contacts">
+		<request path="service/get/kannan/password" method="GET">
+			<headers>
+				<header name="ghfhjg" value="kjhgkjh" />
+			</headers>
+			<payload>
+
+			</payload>
+		</request>
+		<asserts>
+			<assert id="assert1" element="header" key="location" value="test1" errormsg="Invalid" />
+			<assert id="assert2" element="statusline" key="statuscode" value="200" errormsg="Invalid" />
+		</asserts>
+	</test>
+	<test id="test#2" resource="getContact" scenario="empty contacts">
+		<request path="service/insert" method="POST">
+			<headers>
+				<header name="" value="" />
+			</headers>
+			<payload>
+				<customer>
+					<password>pwd</password>
+					<userName>usr</userName>
+				</customer>
+			</payload>
+		</request>
+		<asserts>
+			<assert id="assert1" element="header" key="location" value="test1" errormsg="Invalid" />
+			<assert id="assert2" element="statusline" key="statuscode" value="200" errormsg="Invalid" />
+		</asserts>
+	</test>
+</tests>
