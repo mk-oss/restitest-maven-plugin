@@ -1,0 +1,33 @@
+<tests>
+	<test id="test#1" resource="getProfile" scenario="empty details">
+		<request path="service/v1/contact/profile" method="GET">
+			<headers>
+				<header name="token" value="#token111#" />
+			</headers>
+			<payload>
+
+			</payload>
+		</request>
+		<asserts>
+			<assert id="assert1" element="header" key="location" value="test1" errormsg="Invalid" />
+			<assert id="assert2" element="statusline" key="statuscode" value="200" errormsg="Invalid" />
+		</asserts>
+	</test>
+	<test id="test#2" resource="postProfile" scenario="create credentials">
+		<request path="service/v1/contact/profile" method="POST">
+			<headers>
+				<header name="token" value="#token111#" />
+			</headers>
+			<payload>
+				<customer>
+					<password>pwd</password>
+					<userName>usr</userName>
+				</customer>
+			</payload>
+		</request>
+		<asserts>
+			<assert id="assert1" element="header" key="location" value="test1" errormsg="Invalid" />
+			<assert id="assert2" element="statusline" key="statuscode" value="200" errormsg="Invalid" />
+		</asserts>
+	</test>
+</tests>
